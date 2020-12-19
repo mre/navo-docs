@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Readme
-nav_exclude: true
 ---
 ## NAVO Documentation
 
