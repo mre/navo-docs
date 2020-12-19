@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+## NAVO Documentation
 
-You can use the [editor on GitHub](https://github.com/joesan/joesan.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Here you will find more information on how to build the NAVO robot from scratch. This is a living documentation and I will update it as soon as I have some time!
 
 ### Markdown
 
