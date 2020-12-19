@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Readme
+title: NAVO Readme
 ---
 ## NAVO Documentation
 

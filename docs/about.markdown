@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-nav_order: 5
+nav_order: 4
 ---
 
 ## NAVO Documentation Home
