@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Home
-nav_order: 2
-has_children: true
+nav_order: 1
+has_children: false
 ---
 
-## NAVO Documentation
+## NAVO Home
 
 Here you will find more information on how to build the NAVO robot from scratch. This is a living documentation and I will update it as soon as I have some time!
 
