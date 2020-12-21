@@ -11,6 +11,14 @@ Here you will find more information on how to build the NAVO robot from scratch.
 
 ### Markdown
 
+[Link button](http://example.com/){: .btn .btn-purple }
+
+New release
+{: .label .label-purple }
+
+[Link to another page](another-page)
+
+
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
