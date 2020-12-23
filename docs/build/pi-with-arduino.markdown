@@ -33,7 +33,7 @@ First let us setup Arduino. Now you could do this on your Raspberry Pi 4 or any 
 
 The idea here is that we need to be able to make your Arduino serial communication capable and for this we have to install a few ros based libraries. There is nothing nore specific to the Raspberry Pi 4. You could do the below steps from the Raspberry Pi 4, but assume that your Raspberry Pi 4 will be the server (probably running in your NAVO) and you do not want to have any IDE running on your production server, so I would set up my Arduino IDE on my Ubuntu machine.
 
-Get the <a href="https://ubuntu.com/tutorials/install-the-arduino-ide#1-overview" target="_blank"> Arduino IDE from here </a>. Make sure to download the appropriate Arduino IDE version for your Ubuntu version (For me it is Ubuntu 20.04). Get it installed as per the instructions!
+Follow <a href="https://ubuntu.com/tutorials/install-the-arduino-ide#1-overview" target="_blank"> the instructions from here </a> to install Arduino IDE on Ubuntu. Make sure to download the appropriate Arduino IDE version for your Ubuntu version (For me it is Ubuntu 20.04). Get it installed as per the instructions!
 
 The next step is to prepare and install the serial libraries that is required to make Arduino communicate with the Raspberry Pi. So for this, open a terminal window from the Ubuntu machine and run the following commands one after the other.
 
