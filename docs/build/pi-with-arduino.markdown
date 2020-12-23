@@ -67,7 +67,11 @@ joesan@joesan-InfinityBook-S-14-v5:~/Arduino/libraries$ dir
 readme.txt  ros_lib
 ```
 
-As you can see that there is a new folder called ros_lib
+As you can see that there is a new folder called ros_lib. That's all it with respect to the setup. Let us now proceed to run some code in the Arduino. We will use some inbuilt program that will blink an LED upon receiving a message from a ROS publisher node.
 
 
 ### Integration and test
+
+Fire up the Arduino IDE, and Go to File -> Examples -> ros_lib and open the Blink sketch program.
+
+![arduino-ide-blink](../assets/images/arduino-ide-blink.png)
