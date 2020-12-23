@@ -22,7 +22,9 @@ Head over <a href="https://ubuntu.com/download/raspberry-pi" target="_blanl">her
 
 After you have downloaded the image, head over <a href="https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#1-overview" target="_blank">here </a> for a comprehensive installation instruction. It is pretty easy and straightforward!
 
-Once you have your Raspberry Pi ready with Ubuntu 20.04, it is time to set up / install ROS!
+Once you have your Raspberry Pi ready with Ubuntu 20.04, it is time to set up / install ROS! Since we have installed a headless Ubuntu, we need to first SSH into the Raspberry Pi. For this to work, you need to enable your Raspberry Pi network ready. Follow the instructions from here to make your Raspberry Pi visible to your home network.
+
+
 
 TODO....
 
