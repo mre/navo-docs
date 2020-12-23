@@ -52,5 +52,22 @@ After this, fire up the Arduino IDE, by type arduino from a termincal window (se
 
 ![arduino-ide-ubuntu](../assets/images/arduino-ide-ubuntu.png)
 
+After this, open a new terminal window and cd into the arduino folder, and then cd into libraries directory. From that libraries directory, run the following command below. This command should build the needed libraries that will be used by ROS.
+
+
+```
+joesan@joesan-InfinityBook-S-14-v5:~/Arduino/libraries$ rosrun rosserial_arduino make_libraries.py .
+```
+
+Now after this, if you type the dir command, you should see the following:
+
+
+```
+joesan@joesan-InfinityBook-S-14-v5:~/Arduino/libraries$ dir
+readme.txt  ros_lib
+```
+
+As you can see that there is a new folder called ros_lib
+
 
 ### Integration and test
