@@ -46,7 +46,7 @@ sudo apt-get install ros-noetic-rosserial-arduino
 sudo apt-get install ros-noetic-rosserial
 ```
 
-Make sure to replace the ROS version appropriately. Here we base our discussion on the noetic version of ROS!
+Make sure to replace the ROS version appropriately. For me it is Noetic!
 
 After this, fire up the Arduino IDE, by typing arduino from a terminal window (see the screenshot below)
 
@@ -96,7 +96,7 @@ Now let’s turn on the LED by publishing a single empty message to the /toggle_
 joesan@joesan-InfinityBook-S-14-v5:~$ rostopic pub toggle_led std_msgs/Empty --once
 ```
 
-On my machine, all the three commands above look like this. I'm using [Tilix](https://gnunn1.github.io/tilix-web/) as my Terminal program.
+On my machine, all the three commands above look like this. I'm using <a href="https://gnunn1.github.io/tilix-web/" target="_blank"> Tilix </a> as my Terminal program.
 
 This should now toggle the LED on the Arduino as can be seen in the image below!
 
