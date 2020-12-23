@@ -15,6 +15,8 @@ Let us understand some fundamentals behind ROS! We will brush over the following
 4. Master
 5. Services
 6. Publisher & Subscriber
+7. Bags
+8. Parameter Server
 
 ### Nodes
 
