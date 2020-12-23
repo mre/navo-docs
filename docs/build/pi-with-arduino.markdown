@@ -50,7 +50,7 @@ Make sure to replace the ROS version appropriately. Here we base our discussion 
 
 After this, fire up the Arduino IDE, by type arduino from a termincal window (see the screenshot below)
 
-![arduino-ide-ubuntu](assets/images/arduino-ide-ubuntu.png)
+![arduino-ide-ubuntu](../assets/images/arduino-ide-ubuntu.png)
 
 
 ### Integration and test
