@@ -115,18 +115,17 @@ While testing this setup, I faced some issues with the ros serial library:
 
 
 ```
-    >     In file included from /home/user/Arduino/libraries/Rosserial_Arduino_Library/src/std_msgs/Time.h:7:0,
-    >                      from /home/user/Arduino/libraries/Rosserial_Arduino_Library/src/ros/node_handle.h:40,
-    >                      from /home/user/Arduino/libraries/Rosserial_Arduino_Library/src/ros.h:38,
-    >                      from /home/user/Arduino/libraries/Rosserial_Arduino_Library/examples/Blink/Blink.pde:6:
-    >     /home/joesan/Arduino/libraries/Rosserial_Arduino_Library/src/ros/msg.h:40:10:
-    > fatal error: cstring: No such file or
-    > directory
-    >      #include <cstring>
-    >               ^~~~~~~~~
-    >     compilation terminated.
-    >     exit status 1
-    >     Error compiling for board Arduino Uno.
+In file included from /home/user/Arduino/libraries/Rosserial_Arduino_Library/src/std_msgs/Time.h:7:0,
+  from /home/user/Arduino/libraries/Rosserial_Arduino_Library/src/ros/node_handle.h:40,
+  from /home/user/Arduino/libraries/Rosserial_Arduino_Library/src/ros.h:38,
+  from /home/user/Arduino/libraries/Rosserial_Arduino_Library/examples/Blink/Blink.pde:6:
+  /home/joesan/Arduino/libraries/Rosserial_Arduino_Library/src/ros/msg.h:40:10:
+  fatal error: cstring: No such file or directory
+    #include <cstring>
+              ^~~~~~~~~
+   compilation terminated.
+   exit status 1
+   Error compiling for board Arduino Uno.
 
 ```
 
