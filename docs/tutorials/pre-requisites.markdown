@@ -19,3 +19,8 @@ Software that you need to install (unless explicitly specified, every instructio
 3. Arduino IDE
 4. VS Code
 
+Some additional set of useful tools to be installed:
+
+1. fritzing
+2. GIMP
+
