@@ -26,5 +26,5 @@ Now that we know about the L298N Driver and its intended usgae, let us wire it u
 ### Connecting Arduino with L298N
 
 
-![arduino-h-bridge](../assets/images/arduino-h-bridge.png)
+![arduino-h-bridge](../assets/images/arduino/arduino-h-bridge.png)
 

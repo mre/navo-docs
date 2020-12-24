@@ -76,7 +76,7 @@ As it can be seen that there is a new folder called ros_lib. That's all it with 
 
 Fire up the Arduino IDE, and Go to File -> Examples -> ros_lib and open the Blink sketch program.
 
-![arduino-ide-blink](../assets/images/arduino/arduino-ide-blink.png)
+![arduino-ide-blink](../assets/images/arduino/arduino-ide-blink-sketch.png)
 
 Upload the code to Arduino. Make sure your Arduino is plugged into the USB port on your computer. To do this, either run Ctrl + U command from the Arduino IDE or Go to Sketch -> Upload which will then upload this program into your Arduino hardware.
 
