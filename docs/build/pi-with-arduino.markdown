@@ -100,7 +100,7 @@ joesan@joesan-InfinityBook-S-14-v5:~$ rostopic pub toggle_led std_msgs/Empty --o
 
 On my machine, all the three commands above look like this. I'm using <a href="https://gnunn1.github.io/tilix-web/" target="_blank"> Tilix </a> as my Terminal program. Note that additionally I'm tailing on the messages that gets published to the /toggle_led topic
 
-![arduino-ide-light-on](../assets/images/arduino-ros-blink-test.png)
+![arduino-ide-light-on](../assets/images/arduino/arduino-ros-blink-test.png)
 
 I made a small video to see this peanut setup in action!
 
