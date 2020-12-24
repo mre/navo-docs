@@ -104,7 +104,11 @@ On my machine, all the three commands above look like this. I'm using <a href="h
 
 I made a small video to see this peanut setup in action!
 
-[![Arduino ROS Blink Test](http://img.youtube.com/vi/n3X2y9Kdcgo/0.jpg)](http://www.youtube.com/watch?v=n3X2y9Kdcgo&feature=youtu.be "Arduino with ROS LED Blink Test")
+<div align="left">
+      <a href="https://www.youtube.com/watch?v=n3X2y9Kdcgo" target="_blank">
+         <img src="https://img.youtube.com/vi/n3X2y9Kdcgo/0.jpg" style="width:100%;">
+      </a>
+</div>
 
 
 That's all it. To shutdown your Arduino, just disconnect it from your computer's USB port!
