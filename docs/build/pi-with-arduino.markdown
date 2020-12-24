@@ -98,17 +98,43 @@ Now let’s turn on the LED by publishing a single empty message to the /toggle_
 joesan@joesan-InfinityBook-S-14-v5:~$ rostopic pub toggle_led std_msgs/Empty --once
 ```
 
-On my machine, all the three commands above look like this. I'm using <a href="https://gnunn1.github.io/tilix-web/" target="_blank"> Tilix </a> as my Terminal program.
+On my machine, all the three commands above look like this. I'm using <a href="https://gnunn1.github.io/tilix-web/" target="_blank"> Tilix </a> as my Terminal program. Note that additionally I'm tailing on the messages that gets published to the /toggle_led topic
 
-This should now toggle the LED on the Arduino as can be seen in the image below!
+![arduino-ide-light-on](../assets/images/arduino-ros-blink-test.png)
 
-TODO... image of arduino
-![arduino-ide-light-on](../assets/images/arduino-ide-light-on.png)
+I made a small video to see this peanut setup in action!
 
-Now press the Up arrow in the terminal and press ENTER to run this code again. You should see the LED turn off!
+[![Arduino ROS Blink Test](http://img.youtube.com/vi/n3X2y9Kdcgo/0.jpg)](http://www.youtube.com/watch?v=n3X2y9Kdcgo&feature=youtu.be "Arduino with ROS LED Blink Test")
 
-
-TODO... image of arduino
-![arduino-ide-light-off](../assets/images/arduino-ide-light-off.png)
 
 That's all it. To shutdown your Arduino, just disconnect it from your computer's USB port!
+
+### Known Issues
+
+While testing this setup, I faced some issues with the ros serial library:
+
+
+```
+    >     In file included from /home/user/Arduino/libraries/Rosserial_Arduino_Library/src/std_msgs/Time.h:7:0,
+    >                      from /home/user/Arduino/libraries/Rosserial_Arduino_Library/src/ros/node_handle.h:40,
+    >                      from /home/user/Arduino/libraries/Rosserial_Arduino_Library/src/ros.h:38,
+    >                      from /home/user/Arduino/libraries/Rosserial_Arduino_Library/examples/Blink/Blink.pde:6:
+    >     /home/joesan/Arduino/libraries/Rosserial_Arduino_Library/src/ros/msg.h:40:10:
+    > fatal error: cstring: No such file or
+    > directory
+    >      #include <cstring>
+    >               ^~~~~~~~~
+    >     compilation terminated.
+    >     exit status 1
+    >     Error compiling for board Arduino Uno.
+
+```
+
+To resolve this, do the following:
+
+1. Delete the ros_lib folder which is to be found under /home/user/Arduino/libraries/ (here user is your logged in username)
+2. Then open the Arduino IDE, in the menu bar go to Tools -> Manage Libraries and search for "rosserial"
+3. You should see Rosserial Arduino Library by Michael Furguson
+4. Make sure to install the 0.7.9 version
+
+Hope it made sense!
