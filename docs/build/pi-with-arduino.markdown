@@ -102,7 +102,7 @@ On my machine, all the three commands above look like this. I'm using <a href="h
 
 ![arduino-ide-light-on](../assets/images/arduino/arduino-ros-blink-test.png)
 
-I made a small video to see this peanut setup in action!
+I made a small video to see this peanut setup in action! Click the image below for the video!
 
 <div align="left">
       <a href="https://www.youtube.com/watch?v=n3X2y9Kdcgo" target="_blank">
