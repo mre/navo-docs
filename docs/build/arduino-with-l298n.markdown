@@ -61,6 +61,7 @@ So, our sketch looks like this:
 [dc-motor-encoder-test](../assets/code/EncoderTest.markdown)
 ```
 
+{% include /navo/docs/assets/code/EncoderTest.html }
 
 That piece of code above deserves some basic explanation. Let us try to do that!
 
