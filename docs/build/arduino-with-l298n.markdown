@@ -23,7 +23,25 @@ TODO.... add an image of the L298N that I purchased
 
 Now that we know about the L298N Driver and its intended usgae, let us wire it up with the Arduino and see how we could control the motor.
 
-### Connecting Arduino with L298N
+### Understanding DC Motor with Encoder
+
+So we need to now effectively understand a little bit about the DC Motor and the need for an Encoder unit. A one liner - a DC Motor is a mechanical device that converts basically electrical energy to mechanical energy. Ok that's simple enough but that's enough. Why do we need an Encoder? With the target that we are trying to build, we need to be able to more precisely control the spped and direction of the motor which effectively translates to the navigability of the Navo. Encoders transform mechanical motion into electrical pulses that can then be used by a controller unit (like the Arduino) to make adjustments and fine tune the motor spped and direction. 
+
+As a reference, we will use this DC Motor that I purchased <a href="https://tinyurl.com/ya3zlznr" target="_blank">from Amazon</a>, but every DC motor with an Encoder unit should behave the same.
+
+There are different types of encoders available, such as liner encoder or rotary encoders. A DC Motor encoder basically has a rotary encoder which is often times mounted to the shaft of the motor. The sketch below shows the basic working principle behind a Rotary margnetic encoder.
+
+TODO.... draw sketch showing Rotary encoder
+
+As it can be seen that the two sensing units (marked A & B) will emit a pulse signal as soon as they hit the underlying magnetic pin (6 of them as can be seen in the diagram above) and this pulse signal can be translated / understood in terms of the direction and speed of the motor. I will not explain more about this topic, but <a href="https://www.youtube.com/watch?v=dMBrR4gDi3s" target="_blank">here is a very descriptive video</a> on understanding DC Motor encoders in much detail. 
+
+### Putting it all together - Arduino, L298N & the DC Motor
+
+So for us, with this fundemental understanding, let us try this out by implementing a simple sketch and testing it out in the wild. As always, here is the motor pins / wire reference and the fritzing schematic. 
+
+
+
+
 
 
 ![arduino-h-bridge](../assets/images/arduino/arduino-h-bridge.png)
