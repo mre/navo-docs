@@ -31,9 +31,9 @@ As a reference, we will use this DC Motor that I purchased <a href="https://tiny
 
 The image below shows the wiring definitions for the DC Motor model:
 
-![dc-motor-wiring](../assets/images/motor/dc-motor-wire-setup.jpg)
+![dc-motor-wiring](../assets/images/motor/dc-motor-wiring.png)
 
-There are different types of encoders available, such as liner encoder or rotary encoders. A DC Motor encoder basically has a rotary encoder which is often times mounted to the shaft of the motor. The rotary encoder used here is a 6 pole magnetic disc attached to the shaft of the motor, along with two <a href="https://en.wikipedia.org/wiki/Hall_effect" target="_blank">Hall effect</a> sensors. When the motor turns, the 6 pole magnetic disk rotates past the two sensors and when each time a magnetic pole passes one of the sensor, the encoder outputs a digital pulse. The sketch below shows the basic working principle behind a Rotary margnetic encoder. 
+There are different types of encoders available, such as liner encoder or rotary encoders. A DC Motor encoder basically has a rotary encoder which is often times mounted to the shaft of the motor. The rotary encoder used here is a 6 pole magnetic disc attached to the shaft of the motor, along with two <a href="https://en.wikipedia.org/wiki/Hall_effect" target="_blank">Hall effect</a> sensors. When the motor turns, the 6 pole magnetic disk rotates past the two sensors and when each time a magnetic pole passes one of the sensor, the encoder outputs a digital pulse. So here with the two hall effect sensors, we get two output signals separated by 90 dgrees. The sketch below shows the basic working principle behind a Rotary margnetic encoder. 
 
 TODO.... draw sketch showing Rotary encoder
 
