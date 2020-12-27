@@ -58,11 +58,11 @@ TODO.... Note about adding the second motor!
 So, our sketch looks like this:
 
 ```
-../assets/code/EncoderTest.ino
+../assets/code/EncoderTest.md
 ```
 
 That piece of code above deserves some basic explanation. Let us try to do that!
 
-
+TODO....
 
 
