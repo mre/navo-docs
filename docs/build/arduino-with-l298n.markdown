@@ -57,12 +57,6 @@ TODO.... Note about adding the second motor!
 
 So, our sketch looks like this:
 
-```
-[dc-motor-encoder-test](../assets/code/EncoderTest.markdown)
-```
-
-{% include https://https://joesan.github.io/navo/docs/assets/code/EncoderTest.html }
-
 {% highlight c %}
 /*
  * DC Motor Encoder Test Sketch
