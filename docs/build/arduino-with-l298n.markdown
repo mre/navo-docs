@@ -58,8 +58,9 @@ TODO.... Note about adding the second motor!
 So, our sketch looks like this:
 
 ```
-[dc-motor-encoder-test](../assets/code/EncoderTest.md)
+[dc-motor-encoder-test](../assets/code/EncoderTest.markdown)
 ```
+
 
 That piece of code above deserves some basic explanation. Let us try to do that!
 
