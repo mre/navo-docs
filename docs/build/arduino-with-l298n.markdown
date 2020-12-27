@@ -41,12 +41,5 @@ As it can be seen that the two sensing units (marked A & B) will emit a pulse si
 
 So for us, with this fundemental understanding, let us try this out by implementing a simple sketch and testing it out in the wild. Here is the fritzing schematic:
 
- 
-
-
-
-
-
-
-![arduino-h-bridge](../assets/images/arduino/arduino-h-bridge.png)
+![arduino-h-bridge](../assets/images/arduino/arduino-h-bridge-motor.png)
 
