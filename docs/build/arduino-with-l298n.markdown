@@ -73,8 +73,6 @@ So, our sketch looks like this:
 #define M1_ENCODER_A 3 // The yellow wire in the sketch above
 #define M1_ENCODER_B 4 // The green wire in the sketch above
 
-const byte M1_INTERRUPT_PIN = 3; // Interrupt PIN for Motor 1, same as M1_ENCODER_A
-
 // variable to record the number of encoder pulse
 volatile unsigned long m1Count = 0;
 
@@ -83,7 +81,7 @@ void setup() {
   pinMode(M1_ENCODER_B, INPUT);
   
   // initialize hardware interrupt
-  attachInterrupt(digitalPinToInterrupt(M1_INTERRUPT_PIN), m1EncoderEvent, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(M1_ENCODER_A), m1EncoderEvent, CHANGE);
   
   Serial.begin(9600);
 }
