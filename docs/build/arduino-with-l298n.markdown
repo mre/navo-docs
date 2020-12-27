@@ -115,6 +115,6 @@ void m1EncoderEvent() {
 
 That piece of code above deserves some basic explanation. Let us try to do that!
 
-The important part to note about the code above is the use of the attachInterrput function. <a href="https://www.allaboutcircuits.com/technical-articles/using-interrupts-on-arduino/" target="_blank">Have a look here</a> for a very good explanation of the function püarameters and its meaning!
+The important part to note about the code above is the use of the attachInterrput function. <a href="https://www.allaboutcircuits.com/technical-articles/using-interrupts-on-arduino/" target="_blank">Have a look here</a> for a very good explanation of the function parameters and its meaning!
 
 
