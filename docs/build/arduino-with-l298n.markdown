@@ -73,6 +73,8 @@ So, our sketch looks like this:
 #define M1_ENCODER_A 3 // The yellow wire in the sketch above
 #define M1_ENCODER_B 4 // The green wire in the sketch above
 
+const byte M1_INTERRUPT_PIN = 3; // Interrupt PIN for Motor 1, same as M1_ENCODER_A
+
 // variable to record the number of encoder pulse
 volatile unsigned long m1Count = 0;
 
@@ -81,7 +83,7 @@ void setup() {
   pinMode(M1_ENCODER_B, INPUT);
   
   // initialize hardware interrupt
-  attachInterrupt(0, m1EncoderEvent, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(M1_INTERRUPT_PIN), m1EncoderEvent, CHANGE);
   
   Serial.begin(9600);
 }
@@ -113,6 +115,6 @@ void m1EncoderEvent() {
 
 That piece of code above deserves some basic explanation. Let us try to do that!
 
-TODO....
+The important part to note about the code above is the use of the attachInterrput function. <a href="https://www.allaboutcircuits.com/technical-articles/using-interrupts-on-arduino/" target="_blank">Have a look here</a> for a very good explanation of the function püarameters and its meaning!
 
 
