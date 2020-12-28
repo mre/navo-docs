@@ -55,7 +55,11 @@ From the sketch above, we have connected the Encoder A pin is connected to the h
 
 TODO.... Note about adding the second motor!
 
-So, our sketch looks like this:
+**Power Supply**
+
+As it can also be seen from the schematic above is that, we are using a 12V external power supply from a battery pack. This is just about enough to also power the Arduino board.
+
+With that being said, our sketch looks like this:
 
 {% highlight c %}
 /*
