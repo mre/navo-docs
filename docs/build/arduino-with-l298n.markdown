@@ -15,7 +15,7 @@ The L298N is a DC Motor controller. The speed of the DC Motor could be controlle
 
 Okay, so we can now control the speed of the motor with PWM, but what about the direction? Speed is not just about going forwards, but also going backwards. Fortunately this is very simple using a so called <a href="https://en.wikipedia.org/wiki/H-bridge" target="_blank">H bridge</a>.
 
-Hence, by combinig the PWM with an H Bridge, we can acheive what we want which is to control the speed and direction. The L298N is exactly this. I have purchased a few of these L298N Driver unit. Each one is capable of controlling 2 DC Motors within the 5V and 35V range with a peak current of 2A.
+Hence, by combinig the PWM with an H Bridge, we can acheive what we want which is to control the speed and direction. The L298N is exactly this. I have purchased a few of these L298N Driver units. Each one is capable of controlling upto 2 DC Motors within the 5V and 35V range with a peak current of 2A.
 
 Here is a picture of my L298N H bridge. For the exact model, go here to find the [list of materials](../hardware/) that you need to source!
 
@@ -70,6 +70,9 @@ With that being said, our sketch looks like this:
  * Records encoder ticks for each wheel
  * and prints the number of ticks for
  * each encoder every 500ms
+ * 
+ * WARNING: This is a throw away sketch, it is here
+ * just for experimental purposes.
  *
  */
 
@@ -77,12 +80,19 @@ With that being said, our sketch looks like this:
 #define M1_ENCODER_A 3 // The yellow wire in the sketch above
 #define M1_ENCODER_B 4 // The green wire in the sketch above
 
+int enA = 8;
+int in1 = 9;
+int in2 = 10;
+
 // variable to record the number of encoder pulse
 volatile unsigned long m1Count = 0;
 
 void setup() {
   pinMode(M1_ENCODER_A, INPUT);
   pinMode(M1_ENCODER_B, INPUT);
+  pinMode(enA, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
   
   // initialize hardware interrupt
   attachInterrupt(digitalPinToInterrupt(M1_ENCODER_A), m1EncoderEvent, CHANGE);
@@ -91,10 +101,26 @@ void setup() {
 }
 
 void loop() {
+  analogWrite(enA, 255);
+
+  // Turn on Motor A
+  run();
+  
   Serial.print("M1 Count: ");
   Serial.println(m1Count);
-  Serial.println();
   delay(500); // time in ms
+}
+
+void run() {
+  // Turn on Motor A
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  delay(2000);
+
+  // Reverse
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  delay(2000);
 }
 
 // encoder event for the interrupt call
@@ -119,4 +145,18 @@ That piece of code above deserves some basic explanation. Let us try to do that!
 
 The important part to note about the code above is the use of the attachInterrput function. <a href="https://www.allaboutcircuits.com/technical-articles/using-interrupts-on-arduino/" target="_blank">Have a look here</a> for a very good explanation of the function parameters and its meaning!
 
+
+M1 Count: 0
+
+In else if
+M1 Count: 4294967295
+
+M1 Count: 4294967295
+
+In inside if
+M1 Count: 0
+
+M1 Count: 0
+
+M1 Count: 0
 
