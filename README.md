@@ -4,6 +4,8 @@ TODO.... THIS IS A WIP
 
 Here you will find more information on how to build the NAVO robot from scratch. This is a living documentation and I will update it as soon as I have some time!
 
+Please do visit frequently for further updates to this project!
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
