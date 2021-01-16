@@ -56,3 +56,10 @@ There are different types of encoders available, such as liner encoder or rotary
 ![rotary-encoder-pulse](../assets/images/motor/square-wave.png)
 
 As it can be seen that the two sensing units (marked A & B) will emit a pulse signal as soon as they hit the underlying magnetic pin (6 of them as can be seen in the diagram above) and this pulse signal can be translated / understood in terms of the direction and speed of the motor. I will not explain more about this topic, but <a href="https://www.youtube.com/watch?v=dMBrR4gDi3s" target="_blank">here is a very descriptive video</a> on understanding DC Motor encoders in much detail.
+
+CW  -> Clockwise Direction
+CCW -> Counter-Clockwise Direction
+
+As wwe can infer from the square wave pulse signals that binary combinations for the pulses A & B, we can infer that when we get a pulse signal that has a RISING for the pulse A and during this if we measure a LOW for pulse B, we know that the motor is in the forward direction (CW). If on the other hand when the pulse signal for A has a RISING and during this if we measure a HIGH for pulse B, we know that the motor is in the reverse direction (CCW).
+
+Ok that's for the speed. Now let us see how we could leverage this information and some additional data from the Motor's specification, determine the RPM which in turn is the basis for doing speed control.
