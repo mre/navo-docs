@@ -7,15 +7,15 @@ nav_order: 3
 
 ## DC Motor
 
-In this tutorial, we will look at how to do speed control with a DC Motor. I will be using this <a href="https://www.pololu.com/product/4843" target="_blank">DC Motor with Encoder</a> as a reference. The main reason being that it has a very good specification documentation. The instructions here will be the same for any similiar motor with a quadrature encoder attached to the shaft of the motor.
+In this tutorial, we will look at how to do speed control using a DC Motor that has a quadrature shaft encoder. I will be using this <a href="https://www.pololu.com/product/4843" target="_blank">DC Motor with Encoder</a> as a reference. The main reason being that it has a very good specification documentation. The instructions here will be the same for any similiar motor with a quadrature encoder attached to the shaft of the motor.
 
 I will refuse to talk about DC Motors in general as that is not the focus for us, but rather to understand how to make use of the Encoder pulses with which we could measure the RPM and thus control the speed.
 
 ### Understanding DC Motor with Encoder
 
-So we need to now effectively understand a little bit about the DC Motor and the need for an Encoder unit. A one liner - a DC Motor is a mechanical device that converts basically electrical energy to mechanical energy. Ok that's simple enough but that's enough. Why do we need an Encoder? With the target that we are trying to build, we need to be able to more precisely control the spped and direction of the motor which effectively translates to the navigability of the Navo. Encoders transform mechanical motion into electrical pulses that can then be used by a controller unit (like the Arduino) to make adjustments and fine tune the motor spped and direction. 
+So we need to now effectively understand a little bit about the DC Motor and the need for an Encoder unit. A one liner - a DC Motor is a mechanical device that converts basically electrical energy to mechanical energy. Ok that's simple enough but that's enough. Why do we need an Encoder? With the target that we are trying to build, we need to be able to more precisely control the speed and direction of the motor which effectively translates to the navigability of the Navo. Encoders transform mechanical motion into electrical pulses that can then be used by a controller unit (like the Arduino) to make adjustments and fine tune the motor spped and direction. 
 
-As mentioned before, we will use <a href="https://www.pololu.com/product/4843" target="_blank">DC Motor with Encoder</a>. The table below shows the wiring definitions.
+As mentioned before, we will use <a href="https://www.pololu.com/product/4843" target="_blank">DC Motor with Encoder</a>. The table and the image below clarifies the wiring definitions.
 
 <table style="width:100%; border: 1px solid black;">
   <tr>
@@ -47,8 +47,6 @@ As mentioned before, we will use <a href="https://www.pololu.com/product/4843" t
     <td style="border: 1px solid black;">encoder B output</td>
   </tr>
 </table> 
-
-The image below shows the wiring definitions for the DC Motor model:
 
 ![dc-motor-wiring](../assets/images/motor/dc-motor-wiring-pololu-25d.png)
 
