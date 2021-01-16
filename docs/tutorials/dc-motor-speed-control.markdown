@@ -15,7 +15,7 @@ I will refuse to talk about DC Motors in general as that is not the focus for us
 
 So we need to now effectively understand a little bit about the DC Motor and the need for an Encoder unit. A one liner - a DC Motor is a mechanical device that converts basically electrical energy to mechanical energy. Ok that's simple enough but that's enough. Why do we need an Encoder? With the target that we are trying to build, we need to be able to more precisely control the spped and direction of the motor which effectively translates to the navigability of the Navo. Encoders transform mechanical motion into electrical pulses that can then be used by a controller unit (like the Arduino) to make adjustments and fine tune the motor spped and direction. 
 
-TODO... correct the documentation
+As mentioned before, we will use <a href="https://www.pololu.com/product/4843" target="_blank">DC Motor with Encoder</a>. The table below shows the wiring definitions.
 
 <table style="width:100%; border: 1px solid black;">
   <tr>
@@ -46,13 +46,11 @@ TODO... correct the documentation
     <td style="border: 1px solid black;">White</td>
     <td style="border: 1px solid black;">encoder B output</td>
   </tr>
-</table>
-
-As a reference, we will use this DC Motor that I purchased <a href="https://tinyurl.com/ya3zlznr" target="_blank">from Amazon</a>, but every DC motor with an Encoder unit should behave the same. 
+</table> 
 
 The image below shows the wiring definitions for the DC Motor model:
 
-![dc-motor-wiring](../assets/images/motor/dc-motor-wiring.png)
+![dc-motor-wiring](../assets/images/motor/dc-motor-wiring-pololu-25d.png)
 
 There are different types of encoders available, such as liner encoder or rotary encoders. A DC Motor encoder basically has a rotary encoder which is often times mounted to the shaft of the motor. The rotary encoder used here is a 6 pole magnetic disc attached to the shaft of the motor, along with two <a href="https://en.wikipedia.org/wiki/Hall_effect" target="_blank">Hall effect</a> sensors. When the motor turns, the 6 pole magnetic disk rotates past the two sensors and when each time a magnetic pole passes one of the sensor, the encoder outputs a digital pulse. So here with the two hall effect sensors, we get two output signals separated by 90 dgrees. The sketch below shows the basic working principle behind a Rotary margnetic encoder. 
 
