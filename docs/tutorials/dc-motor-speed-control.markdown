@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DC Motor Speec Control
+title: DC Motor Speed Control
 parent: Tutorials
 nav_order: 3
 ---
@@ -53,5 +53,6 @@ As mentioned before, we will use <a href="https://www.pololu.com/product/4843" t
 There are different types of encoders available, such as liner encoder or rotary encoders. A DC Motor encoder basically has a rotary encoder which is often times mounted to the shaft of the motor. The rotary encoder used here is a 6 pole magnetic disc attached to the shaft of the motor, along with two <a href="https://en.wikipedia.org/wiki/Hall_effect" target="_blank">Hall effect</a> sensors. When the motor turns, the 6 pole magnetic disk rotates past the two sensors and when each time a magnetic pole passes one of the sensor, the encoder outputs a digital pulse. So here with the two hall effect sensors, we get two output signals separated by 90 dgrees. The sketch below shows the basic working principle behind a Rotary margnetic encoder. 
 
 ![rotary-encoder](../assets/images/motor/encoder.jpg)
+![rotary-encoder-pulse](../assets/images/motor/square-wave.png)
 
 As it can be seen that the two sensing units (marked A & B) will emit a pulse signal as soon as they hit the underlying magnetic pin (6 of them as can be seen in the diagram above) and this pulse signal can be translated / understood in terms of the direction and speed of the motor. I will not explain more about this topic, but <a href="https://www.youtube.com/watch?v=dMBrR4gDi3s" target="_blank">here is a very descriptive video</a> on understanding DC Motor encoders in much detail.
