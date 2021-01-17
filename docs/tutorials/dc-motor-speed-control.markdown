@@ -68,6 +68,6 @@ The <a href="https://www.pololu.com/product/4843" target="_blank"> DC Motor that
 
 ![motor-cpr-formula](../assets/images/motor/motor-cpr-formula.png)
 
-So with this formula at hand, we get the gearbox CPR as 979.2
+So with this formula at hand, we get the gearbox CPR = 20.4 * 48 = 979.2
 
 The gearbox output resolution (979.2 CPR) is the only value that we will get from DC motor as feedback which when coupled with time hepls us do speed control.
