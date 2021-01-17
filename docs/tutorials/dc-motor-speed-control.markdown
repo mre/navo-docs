@@ -62,4 +62,4 @@ CCW -> Counter-Clockwise Direction
 
 As wwe can infer from the square wave pulse signals that binary combinations for the pulses A & B, we can infer that when we get a pulse signal that has a RISING for the pulse A and during this if we measure a LOW for pulse B, we know that the motor is in the forward direction (CW). If on the other hand when the pulse signal for A has a RISING and during this if we measure a HIGH for pulse B, we know that the motor is in the reverse direction (CCW).
 
-Ok that's for the speed. Now let us see how we could leverage this information and some additional data from the Motor's specification, determine the RPM which in turn is the basis for doing speed control.
+Ok that's for the direction. Now let us see how we could leverage this information and with some additional data from the Motor's specification, determine the RPM which forms the basis for doing speed control.
