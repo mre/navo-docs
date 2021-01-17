@@ -62,4 +62,10 @@ CCW -> Counter-Clockwise Direction
 
 As wwe can infer from the square wave pulse signals that binary combinations for the pulses A & B, we can infer that when we get a pulse signal that has a RISING for the pulse A and during this if we measure a LOW for pulse B, we know that the motor is in the forward direction (CW). If on the other hand when the pulse signal for A has a RISING and during this if we measure a HIGH for pulse B, we know that the motor is in the reverse direction (CCW).
 
-Ok that's for the direction. Now let us see how we could leverage this information and with some additional data from the Motor's specification, determine the RPM which forms the basis for doing speed control.
+Ok that's for the direction. Now let us see how we could leverage this information and with some additional data from the Motor's specification, determine the RPM which forms the basis for doing speed control. To do this we need to understand the motor's specification.
+
+The <a href="https://www.pololu.com/product/4843" target="_blank"> DC Motor that we use </a> has a metal gearbox with a ratio of 20.4:1 and a shaft with a diameter of 25 mm. The resolution of the encoder that is assembled to the motor shaft is rated at 48 Cycles Per Revolution (CPR). What this exactly means is that if the motor shaft turns one round the output of the encoder counts up to 48. But it is important to notice that the gearbox shaft is different than the motor shaft and as mentioned before, the ratio of rotation between these shafts is 20.4:1. So if motor shaft turns 20.4 times, gearbox shaft turns just 1 time. So with this understanding, the cycles per revolution of the gearbox shaft can be calculated with the following formula:
+
+![motor-cpr-formula](../assets/images/motor/motor-cpr-formula.png)
+
+The gearbox output resolution (1920 CPR) is of great importance in this project because it is the only feedback we get from the DC motor and using this feedback we shall acquire position and speed variables to be used in PID control which will be explained in detail later.
