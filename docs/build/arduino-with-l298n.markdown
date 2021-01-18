@@ -75,7 +75,6 @@ With that being said, our sketch looks like this:
  * just for experimental purposes.
  *
  */
-
 // pins for the encoder inputs for Motor M1
 #define M1_ENCODER_A 3 // The yellow wire in the sketch above
 #define M1_ENCODER_B 4 // The green wire in the sketch above
@@ -86,6 +85,8 @@ int in2 = 10;
 
 // variable to record the number of encoder pulse
 volatile unsigned long m1Count = 0;
+double rpm = 0;
+unsigned long lastmillis = 0;
 
 void setup() {
   pinMode(M1_ENCODER_A, INPUT);
@@ -95,36 +96,50 @@ void setup() {
   pinMode(in2, OUTPUT);
   
   // initialize hardware interrupt
-  attachInterrupt(digitalPinToInterrupt(M1_ENCODER_A), m1EncoderEvent, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(M1_ENCODER_A), m1EncoderEvent, RISING);
   
   Serial.begin(9600);
 }
 
 void loop() {
-  analogWrite(enA, 255);
+  // Turn on Motor A forward direction
+  runForward(255);
 
-  // Turn on Motor A
-  run();
-  
-  Serial.print("M1 Count: ");
-  Serial.println(m1Count);
-  delay(500); // time in ms
+  // Calculate the RPM every second
+  if (millis() - lastmillis == 1000) {
+    // Disable interrupt when calculating
+    detachInterrupt(digitalPinToInterrupt(M1_ENCODER_A));
+
+    // rpm = counts / second * seconds / minute * revolutions / count
+    rpm = m1count * 60 / 979.62;      
+    Serial.print("RPM =\t");
+    Serial.println(rpm);  
+    m1Count = 0;
+    lastmillis = millis();
+
+    // Enable interrupt
+    attachInterrupt(digitalPinToInterrupt(M1_ENCODER_A), m1EncoderEvent, RISING);
+  }
 }
 
-void run() {
-  // Turn on Motor A
+void runForward(int speed) { //speed 0-255
+  analogWrite(enA, speed);
   digitalWrite(in1, HIGH);
   digitalWrite(in2, LOW);
-  delay(2000);
+}
 
-  // Reverse
+void runBackward(int speed) { //speed 0-255
+  analogWrite(enA, speed);
   digitalWrite(in1, LOW);
   digitalWrite(in2, HIGH);
-  delay(2000);
+}
+
+void m1EncoderEvent() {
+  m1Count++;
 }
 
 // encoder event for the interrupt call
-void m1EncoderEvent() {
+/*void m1EncoderEvent() {
   if (digitalRead(M1_ENCODER_A) == HIGH) {
     if (digitalRead(M1_ENCODER_B) == LOW) {
       m1Count++;
@@ -137,7 +152,7 @@ void m1EncoderEvent() {
     } else {
       m1Count++;
     }
-  }
+  } */
 }
 {% endhighlight %}
 
@@ -146,17 +161,4 @@ That piece of code above deserves some basic explanation. Let us try to do that!
 The important part to note about the code above is the use of the attachInterrput function. <a href="https://www.allaboutcircuits.com/technical-articles/using-interrupts-on-arduino/" target="_blank">Have a look here</a> for a very good explanation of the function parameters and its meaning!
 
 
-M1 Count: 0
-
-In else if
-M1 Count: 4294967295
-
-M1 Count: 4294967295
-
-In inside if
-M1 Count: 0
-
-M1 Count: 0
-
-M1 Count: 0
 
