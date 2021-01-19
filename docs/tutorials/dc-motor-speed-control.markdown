@@ -70,15 +70,17 @@ The <a href="https://www.pololu.com/product/4843" target="_blank"> DC Motor that
 
 So with this formula at hand, we get the gearbox CPR = 20.4 * 48 = 979.62
 
-The gearbox output resolution (979.2 CPR) is the only value that we will get from DC motor as feedback which when coupled with time hepls us do speed control. Now the formula to calculate the RPM (speed) is given by:
+The gearbox output resolution (979.62 CPR) is the only value that we will get from DC motor as feedback which when coupled with time hepls us do speed control. Now the formula to calculate the RPM (speed) is given by:
 
 ![motor-cpr-formula](../assets/images/motor/dc-motor-rpm-formula-1.png)
 
-where revolutions per count or revolutions per pulse equates to 1 / 979.62 and the seconds per minute os 60, so if we plug in these values into the equation above, we end up with the following:
+where revolutions per count or revolutions per pulse equates to 1 / 979.62 (we know that pulse per revolution PPR or CPR is 979.62), so if we plug in these values into the equation above, we end up with the following:
 
 ![motor-cpr-formula](../assets/images/motor/dc-motor-rpm-formula-2.png)
 
-We then have to plug in this equation into the sketch below and make the measurements every second. Let us see how the sketch looks like!
+We then have to plug in this equation into the sketch below and measure the number of pulse counts every second. Let us see how the sketch looks like!
+
+### DC Motor Speed Control Arduino Sketch
 
 {% highlight c %}
 /*
@@ -124,14 +126,12 @@ void loop() {
   if (millis() - lastmillis == 1000) {
     // Disable interrupt when calculating
     detachInterrupt(digitalPinToInterrupt(M1_ENCODER_A));
-
     // rpm = counts / second * seconds / minute * revolutions / count
     rpm = m1count * 60 / 979.62;      
     Serial.print("RPM =\t");
     Serial.println(rpm);  
     m1Count = 0;
     lastmillis = millis();
-
     // Enable interrupt
     attachInterrupt(digitalPinToInterrupt(M1_ENCODER_A), m1EncoderEvent, RISING);
   }
