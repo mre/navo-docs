@@ -5,8 +5,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "/navo" # the subpath of your site, e.g. /blog
-url: "https://joesan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/navo-docs" # the subpath of your site, e.g. /blog
+url: "https://navo-org.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  joesan
 
 # Enable or disable the site search
@@ -51,7 +51,7 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
-gh_edit_repository: "https://github.com/navo-org/navo-docs" # the github URL for your repo
+gh_edit_repository: "https://navo-org.github.io/navo-docs" # the github URL for your repo
 gh_edit_branch: "main" # the branch that your docs is served from
 # gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
