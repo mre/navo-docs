@@ -31,13 +31,9 @@ So for us, with this fundemental understanding, let us try this out by implement
 
 ![arduino-h-bridge](../assets/images/arduino/arduino-h-bridge-motor.png)
 
-A few points to mention about the sketch:
+A few points to mention about the circuit:
 
-**Hardware interrupts**
 
-If you are a bit familiar with the pins on the standard <a href="https://www.arduino.cc/en/reference/board" target="_blank">Arduino board</a>, the pins 2 and 3 are classified as pins for hardware interrupts. Have a <a href="https://playground.arduino.cc/Code/Interrupts/" target="_blank">look here to understand what interrupts are</a> and how they can be useful. So in essence with hardware interrupts, your main program runs until the state of one of your interrupt pins change.The main program is stopped, a special interrupt method / function is called and then the main program resumes. For example., if your main program is about navigating your robot by avoiding obstacles, and if your robot recognizes an obstacle, the interrupt pin can be made to change its state from LOW to HIGH and this would trigger the interrupt function to be called, where you could then adjust the speed of the motor by slowing it down.
-
-From the sketch above, we have connected the Encoder A pin is connected to the hardware interrupt pin 3 of the Arduino.
 
 TODO.... Note about adding the second motor!
 

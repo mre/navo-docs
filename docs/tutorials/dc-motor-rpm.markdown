@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DC Motor
+title: DC Motor with Encoder
 parent: Tutorials
 nav_order: 3
 ---
@@ -154,6 +154,10 @@ void m1EncoderEvent() {
 }
 {% endhighlight %}
 
-That piece of code above deserves some basic explanation. Let us try to do that!
+The important part to note about the code above is the use of the attachInterrput function. <a href="https://www.allaboutcircuits.com/technical-articles/using-interrupts-on-arduino/" target="_blank">Have a look here</a> for a very good explanation of the function parameters and its meaning! Here is a very basic explanation behind using interrupts.
 
-The important part to note about the code above is the use of the attachInterrput function. <a href="https://www.allaboutcircuits.com/technical-articles/using-interrupts-on-arduino/" target="_blank">Have a look here</a> for a very good explanation of the function parameters and its meaning!
+**Hardware interrupts**
+
+If you are a bit familiar with the pins on the standard <a href="https://www.arduino.cc/en/reference/board" target="_blank">Arduino board</a>, the pins 2 and 3 are classified as pins for hardware interrupts. Have a <a href="https://playground.arduino.cc/Code/Interrupts/" target="_blank">look here to understand what interrupts are</a> and how they can be useful. So in essence with hardware interrupts, your main program runs until the state of one of your interrupt pins change.The main program is stopped, a special interrupt method / function is called and then the main program resumes. For example., if your main program is about navigating your robot by avoiding obstacles, and if your robot recognizes an obstacle, the interrupt pin can be made to change its state from LOW to HIGH and this would trigger the interrupt function to be called, where you could then adjust the speed of the motor by slowing it down.
+
+From the sketch above, we have connected the Encoder A pin is connected to the hardware interrupt pin 3 of the Arduino.

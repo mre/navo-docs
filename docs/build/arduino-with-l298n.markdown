@@ -10,7 +10,6 @@ nav_order: 2
 Let us see how we could integrate Arduino with the L298N which is our motor controller. Now, it you are unsure about why we need an L298N H bridge, here is some background information about this! 
 
 
-
 With that being said, our sketch looks like this:
 
 {% highlight c %}
