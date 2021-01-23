@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DC Motor Speed Control
+title: DC Motor RPM
 parent: Tutorials
 nav_order: 3
 ---
