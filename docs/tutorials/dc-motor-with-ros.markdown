@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DC Motor Speed Control with ROS
+title: Speed Control with ROS
 parent: Tutorials
 nav_order: 4
 ---
