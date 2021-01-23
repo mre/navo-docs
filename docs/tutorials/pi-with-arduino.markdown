@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Pi with Arduino
-parent: Build Steps
+parent: Tutorials
 nav_order: 1
 ---
 

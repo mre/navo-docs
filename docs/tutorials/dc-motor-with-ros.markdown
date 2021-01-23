@@ -2,7 +2,7 @@
 layout: default
 title: DC Motor with ROS
 parent: Tutorials
-nav_order: 4
+nav_order: 5
 ---
 
 ## DC Motor Speed Control with ROS
@@ -41,5 +41,7 @@ As it can also be seen from the schematic above is that, we are using a 12V exte
 
 We have already deduced how we could measure the RPM of the DC Motor that we are using. More information about the Arduino sketch can be found <a href="https://navo-org.github.io//navo-docs/docs/tutorials/dc-motor-rpm.html#dc-motor-speed-control-arduino-sketch"> here</a>. There is nothing ROS specific about that sketch. We will use that sketch as a starting point and make it respond to ROS messages from a ROS node, while at the same time, make that sketch send back messages to another ROS node with the RPM that the motor is currently running. Let's get our hands dirty!
 
-TODO....
+### Getting the Arduino ready for ROS
+
+
 
