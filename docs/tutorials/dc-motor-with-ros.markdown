@@ -21,7 +21,7 @@ Hence, by combinig the PWM with an H Bridge, we can acheive what we want which i
 
 Here is a picture of my L298N H bridge. For the exact model, go here to find the [list of materials](../hardware/) that you need to source!
 
-TODO.... add an image of the L298N that I purchased
+![l298n-h-bridge](../assets/images/arduino/l298n-h-bridge.png)
 
 Now that we know about the L298N Driver and its intended usgae, let us wire it up with the Arduino and see how we could control the motor.
 
@@ -31,11 +31,7 @@ So for us, with this fundemental understanding, let us try this out by implement
 
 ![arduino-h-bridge](../assets/images/arduino/arduino-h-bridge-motor.png)
 
-A few points to mention about the circuit:
-
-
-
-TODO.... Note about adding the second motor!
+I hope understanding the circuit is pretty straight forward. We just need to ensure that we have a common ground while the rest of the connections are self explanatory. We just have connected a single motor to the circuit, though a single L298N H bridge can take 2 Motors. If we use the L298N H bridge in our Navo robot is a discussion for later as there are much better motor controllers which we will consider when we talk about the actual build.
 
 **Power Supply**
 
