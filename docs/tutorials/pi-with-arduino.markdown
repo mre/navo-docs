@@ -1,9 +1,11 @@
 ---
 layout: default
-title: Pi with Arduino
+title: ROS Serial on Arduino
 parent: Tutorials
-nav_order: 1
+nav_order: 3
 ---
+
+Let us see how we could setup the ROS serial communication between a Raspberry Pi and an Arduino board.
 
 ## Pi with Arduino
 
