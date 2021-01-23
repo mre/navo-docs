@@ -39,7 +39,7 @@ As it can also be seen from the schematic above is that, we are using a 12V exte
 
 ## The Logic
 
-We have already deduced how we could measure the RPM of the DC Motor that we are using. More information about the Arduino sketch can be found <a href="https://navo-org.github.io//navo-docs/docs/tutorials/dc-motor-rpm.html#dc-motor-speed-control-arduino-sketch"> here</a>. There is nothing ROS specific about that sketch. We will take this sketch and make it respond to ROS messages from a ROS node, while at the same time, make that sketch send back messages to another ROS node with the RPM information that the motor is currently running. Let's get our hands dirty!
+We have already deduced how we could measure the RPM of the DC Motor that we are using. More information about the Arduino sketch can be found <a href="https://navo-org.github.io//navo-docs/docs/tutorials/dc-motor-rpm.html#dc-motor-speed-control-arduino-sketch"> here</a>. There is nothing ROS specific about that sketch. We will use that sketch as a starting point and make it respond to ROS messages from a ROS node, while at the same time, make that sketch send back messages to another ROS node with the RPM that the motor is currently running. Let's get our hands dirty!
 
 TODO....
 
