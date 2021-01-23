@@ -7,7 +7,7 @@ nav_order: 4
 
 ## DC Motor Speed Control with ROS
 
-We saw in the previous tutorial on how to measure the RPM of a DC Motor. In this totorial, let us see how we could do a basic speed control using commands from a ROS node. We are not yet talking about a <a href="https://en.wikipedia.org/wiki/PID_controller" target="_blank">PID spped control algorithm</a> yet, but just a very basic spped manipulation using commands from a ROS node. But first we need to create the circuit. 
+We saw in the previous tutorial on how to measure the RPM of a DC Motor. In this totorial, let us see how we could do a basic speed control using commands from a ROS node. We are not yet talking about a <a href="https://en.wikipedia.org/wiki/PID_controller" target="_blank">PID speed control algorithm</a> yet, but just a very basic spped manipulation using commands from a ROS node. But first we need to create the circuit. 
 
 Our hardware components are based on the Arduino Uno, the L298N H bridge for controlling the motors, a Raspberry Pi. We start with a brief mention about the L298N H bridge.
 
