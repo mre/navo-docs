@@ -49,7 +49,7 @@ We are about to tackle a speed control logic. Let me introduce you to a simple s
 
 We will try to debunk a PID controller from a functional perspective and later on converge on the P, the I and the D. The block diagram below shows the relation between a PID controller and a process that is optimized by using a PID controller. The process here could be anything, but here we assume that the process here is a water heater control system (WHCS). The WHCS works by receiving a desired value for the temperature and heats the water. For example., if we want the WHCS to heat the water to 40° C, we want it to exactly do that.
 
-![pid-controller-1](../assets/images/motor/pid-controller-1.png)
+![pid-controller-1](../assets/images/motor/pid-controller-1.jpg)
 
 From the image above, we have the Process which emits a Process Value (PV), the PID Contoller to which we give a Setpoint value (SP), the sensors that measure the actual Process Value (PV) which is then fed back into the PID controller, thus forming a closed loop. It can also be seen that the Process is also affected by external disturbances which makes it deviate from the Setpoint (SP). The PID controller's job is to account for these external disturnances and make the Process Value (PV) match the Setpoint (SP).
 
