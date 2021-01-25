@@ -53,7 +53,11 @@ We will try to debunk a PID controller from a functional perspective and later o
 
 From the image above, we have the Process which emits a Process Value (PV), the PID Contoller to which we give a Setpoint value (SP), the sensors that measure the actual Process Value (PV) which is then fed back into the PID controller, thus forming a closed loop. It can also be seen that the Process is also affected by external disturbances which makes it deviate from the Setpoint (SP). The PID controller's job is to account for these external disturnances and make the Process Value (PV) match the Setpoint (SP).
 
-If the SP and the PV are the same – then there is no other thing in this world that is going to be much happy than our PID controller. It doesn’t have to do anything, it will set its output to zero, but in reality this is never going to be the case. So let us discuss further to understand the basics behind the PID controller. 
+If the SP and the PV are the same – then there is no other thing in this world that is going to be much happy than our PID controller. It doesn’t have to do anything, it will set its output to zero, but in reality this is never going to be the case. So let us discuss further to understand the basics behind the PID controller.
+
+We first need to understand what each of the term in the PID controller represent. The image below throws a bit of clarity on how each of the terms (Proportional, Integral & the Derivative) combine to get a smooth target output.
+
+TODO: Show the image.... 
 
 ![pid-controller-math](../assets/images/motor/pid-controller-math.png)
 
