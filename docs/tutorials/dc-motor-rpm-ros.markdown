@@ -1,13 +1,13 @@
 ---
 layout: default
-title: DC Motor with ROS
+title: Motor RPM with ROS
 parent: Tutorials
 nav_order: 5
 ---
 
 ## DC Motor Speed Control with ROS
 
-We saw in the previous tutorial on how to measure the RPM of a DC Motor. In this totorial, let us see how we could do a basic speed control using commands from a ROS node. We are not yet talking about a <a href="https://en.wikipedia.org/wiki/PID_controller" target="_blank">PID speed control algorithm</a> yet, but just a very basic spped manipulation using commands from a ROS node. But first we need to create the circuit. 
+We saw in the previous tutorial on how to measure the RPM of a DC Motor. In this totorial, let us see how we could do a basic speed control using commands from a ROS node. We are not yet talking about a <a href="https://en.wikipedia.org/wiki/PID_controller" target="_blank">PID speed control algorithm</a> yet, I will come to that later in this tutorial. But first we need to create the circuit. 
 
 Our hardware components are based on the Arduino Uno, the L298N H bridge for controlling the motors, a Raspberry Pi. We start with a brief mention about the L298N H bridge.
 
@@ -41,7 +41,24 @@ As it can also be seen from the schematic above is that, we are using a 12V exte
 
 We have already deduced how we could measure the RPM of the DC Motor that we are using. More information about the Arduino sketch can be found <a href="https://navo-org.github.io//navo-docs/docs/tutorials/dc-motor-rpm.html#dc-motor-speed-control-arduino-sketch"> here</a>. There is nothing ROS specific about that sketch. We will use that sketch as a starting point and make it respond to ROS messages from a ROS node, while at the same time, make that sketch send back messages to another ROS node with the RPM that the motor is currently running. Let's get our hands dirty!
 
-Additionally, <a href="https://navo-org.github.io//navo-docs/docs/tutorials/pi-with-arduino.html" >have a look here</a> to understand how ROS works with the Arduino using ROS serial libraries. 
+Additionally, <a href="https://navo-org.github.io//navo-docs/docs/tutorials/pi-with-arduino.html" >have a look here</a> to understand how ROS works with the Arduino using ROS serial libraries.
+
+We are about to tackle a speed control logic. Let me introduce you to a simple speed control mechanism called <a href="https://en.wikipedia.org/wiki/PID_controller" target="_blank">PID speed control </a>. Before we set out to write a PID control logic, let us understand a bit about PID controllers:
+
+### PID Control
+
+We will try to debunk a PID controller from a functional perspective and later on converge on the P, the I and the D. The block diagram below shows the relation between a PID controller and a process that is optimized by using a PID controller. The process here could be anything, but here we assume that the process here is a water heater control system (WHCS). The WHCS works by receiving a desired value for the temperature and heats the water. For example., if we want the WHCS to heat the water to 40° C, we want it to exactly do that.
+
+![pid-controller-1](../assets/images/motor/pid-controller-1.png)
+
+From the image above, we have the Process which emits a Process Value (PV), the PID Contoller to which we give a Setpoint value (SP), the sensors that measure the actual Process Value (PV) which is then fed back into the PID controller, thus forming a closed loop. It can also be seen that the Process is also affected by external disturbances which makes it deviate from the Setpoint (SP). The PID controller's job is to account for these external disturnances and make the Process Value (PV) match the Setpoint (SP).
+
+If the SP and the PV are the same – then there is no other thing in this world that is going to be much happy than our PID controller. It doesn’t have to do anything, it will set its output to zero, but in reality this is never going to be the case. So let us discuss further to understand the basics behind the PID controller. 
+
+![pid-controller-math](../assets/images/motor/pid-controller-math.png)
+
+
+
 
 
 
