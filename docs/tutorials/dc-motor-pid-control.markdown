@@ -59,7 +59,9 @@ and by substituting the values, we get
 
 ![pid-controller-math](../assets/images/motor/pid-controller-math.png)
 
-So what that equation basically mean in our context which is to control the speed of the DC motor is that, the controller calculates the speed of the motor (actual_speed), calculates the error between the current speed and the target speed, uses the equation above to determine how much more or less the motor's speed has to be adjusted so that the current speed matches the target speed.
+So what that equation basically mean in our context which is to control the speed of the DC motor is that, the controller calculates the speed of the motor (actual_speed), calculates the error between the current speed and the target speed, uses the equation above to determine how much more or less the motor's speed has to be adjusted so that the current speed matches the target speed. How does all this look like in reality? This is what we show in the code below:
+
+TODO.... Add sketch for showing the PID logic!
 
 Now one question might arise on what values to choose for the PID co-efficients. Luckily people have thought about this and the one that comes to mind is the <a href="https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method" target="_blank">Ziegler–Nichols method</a> introduced by John G. Ziegler and Nathaniel B. Nichols in the 1940s. It is a <a href="https://en.wikipedia.org/wiki/Heuristic" target="_blank">heuristic technique</a> of tuning a PID controller. The basic idea here is that it starts out by setting the integral and the derivative gains (basically the co-efficients Ki and Kd) to zero. The proportional gain (Kp) is then increased from zero until it reaches the untimate gain Ku. This untimate gain is the gain where the control loop has acheived a stable and consistent oscillation. The Ku and the oscillation period is then used to set the P, I and the D gains effectively. Let us not dive more into this for now. 
 
