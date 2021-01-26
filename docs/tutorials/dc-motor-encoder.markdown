@@ -5,6 +5,8 @@ parent: Tutorials
 nav_order: 4
 ---
 
+A DC Motor eqipped with a built in encoder is going to immensly help us in precisely controlling the spped at which the motor rotates. Let us go through the basics behind such an encoder and how it relates to the speed ot the motor.
+
 ## DC Motor
 
 In this tutorial, we will look at how to do speed control using a DC Motor that has a quadrature shaft encoder. I will be using this <a href="https://www.pololu.com/product/4843" target="_blank">DC Motor with Encoder</a> as a reference. The main reason being that it has a very good specification documentation. The instructions here will be the same for any similiar motor with a quadrature encoder attached to the shaft of the motor.
