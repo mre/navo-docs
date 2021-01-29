@@ -71,7 +71,7 @@ void pidControl()
 {
    // Time interval to calculate the next error
    unsigned long now = millis();
-   float timeChange = (double)(now - lastTime);
+   float timeChange = (float)(now - lastTime);
   
    // Calculate the error
    float error = desiredValue - actualValue;
