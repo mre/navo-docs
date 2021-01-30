@@ -31,19 +31,33 @@ This is the most simplest of the control where the controller gives an output th
 
 ![pid-controller-p](../assets/images/motor/pid-controller-p.png)
 
-It can be seen from the equation above that with a small Kp the controller will make small attempts to minimize the error, while for a larger Kp, the controller will make a larger attempt to minimize the error. This is good, but this approach suffers from either an overshoot (if Kp is too large) or an undershoot (if Kp is too small). Both these effects, we do want to avoid. There is always a steady state residual error in the case of a proportional controller.
+It can be seen from the equation above that with a small Kp the controller will make small attempts to minimize the error, while for a larger Kp, the controller will make a larger attempt to minimize the error. This is good, but this approach suffers from either an overshoot (if Kp is too large) or an undershoot (if Kp is too small). Both these effects, called the offset or the steady state error - we do want to avoid. There is always a steady state residual error in the case of a proportional controller. If this is too theoretical, let us understand it from a more practical perspective.
+
+TODO.... adjust the documentation
+
+Offset or steady state error is a sustained error that cannot be eliminated by proportional control alone. For example, let’s consider controlling the water level in the tank as shown in the image below. As long as the flow out of the tank remains constant, the level will remain at its set point.
+
+TODO.... add the image for the Water tank
+
+If we now increase the flow out of the tank, the tank level will start to decrease because of the imbalance between the inflow and outflow. While the tank level decreases, the error increases and the proportional controller will increase the controller output proportionally to this error. Consequently, the valve controlling the flow into the tank opens wider and more water flows into the tank.
+
+As the water level continues to decrease, the error increases and valve continues to open until it gets to a point where the inflow again matches the outflow. At this point the tank level (and error) will remain constant. Because the error remains constant our proportinal controller will keep its output constant and the control valve will hold its position. The system now remains in balance, but the tank level remains below its set point. This remaining sustained error is called offset or the steady state error.
+
+To get rid of this offset, the operator has to manually change the bias (the Kp term) such that the controller's output removes the offset. How can this be done automatically, that is exactly our next topic, the Integral controller!
 
 ### Integral Control
 
-By introducing a time component to the proportional controller, we can mitigate the overshoot and undershoot problems. The integral controller, is capable of handling errors that happen over a certain set time interval. With using an integral component, we can thus overcome the steady state residual error that occurs with the proportional controller.
+By introducing a time component to the proportional controller, we can mitigate the overshoot and undershoot problems, which we termed as the offset or the steady state error. The integral controller, is capable of handling errors that happen over a certain set time interval. With using an integral component, we can thus overcome the steady state residual error that occurs with the proportional controller. 
 
-![pid-controller-i](../assets/images/motor/pid-controller-i.png)
+If the error is large enough, the integral controller will increment / decrement the controller output at a faster rate, while on the other hand if the error is small, the changes will be slow. For any given error, the speed of the integral action is set by the controller's time setting where a larget time setting results in slow integral action and vice versa.
+
+![pid-controller-i](../assets/images/motor/pid-controller-i.png) 
 
 The equation above sums all the previous errors over a given time interval t and accouns for the error correction accordingly. If we have a larger value for the term Ki, it will result in an overshoot.
 
-### Differential Control
+### Differential Control or Derivative Control
 
-The differential controller or the derivative (slope) controller is effectively used to predict the systems future behavior. The proportional and the integral controller both respond to past errors, the differential controller is capable of predicting future behavior of the error. As it can be seen from tnhe equation below that the output of the differential controller depends on the rate of change of error over time, multiplied by a derivative constant Kd.
+The differential controller or the derivative (slope) controller is effectively used to predict the systems future behavior. It is mostly used for processes where motion control is needed, hence a good candidate for our Navo robot. The proportional and the integral controller both respond to past errors, the differential controller is capable of predicting future behavior of the error. As it can be seen from tnhe equation below that the output of the differential controller depends on the rate of change of error over time, multiplied by a derivative constant Kd.
 
 ![pid-controller-d](../assets/images/motor/pid-controller-d.png)
 

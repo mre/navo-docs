@@ -7,46 +7,10 @@ has_children: false
 
 ## NAVO Home
 
-Here you will find more information on how to build the NAVO robot from scratch. This is a living documentation and I will update it as soon as I have some time!
+Navo is an autonomous indoor navigational robot that can get past obstacles using sensors and software. Navo's goal is to be able to not only drive with its 4WD, but also be able to climb stairs, carry stuff around, respond to instructions. Have you seen the robots from Boston Dynamics? If not go check them out. Navo is a thought in that direction, done all by myself.
 
-### Markdown
+This project just contains the documentation for the Navo project. I will just write down on some bacis concepts around Robotics in general and the Navo build in particular.
 
-[Link button](http://example.com/){: .btn .btn-purple }
+## Credits
 
-New release
-{: .label .label-purple }
-
-[Link to another page](another-page)
-
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/joesan/joesan.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
-~                                                                                                                                                                                                                    
-~ 
+- ROS - The Robotics Operating System
