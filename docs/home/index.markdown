@@ -5,6 +5,8 @@ nav_order: 1
 has_children: false
 ---
 
-## What is Navo?
+## The Navo Documentation
 
-Navo is my attempt to build an autonomous indoor navigational robot that can get past obstacles using sensors and software. Navo's goal is to be able to not only drive with its 4WD, but also be able to climb stairs, carry stuff around, respond to instructions. Have you seen the robots from Boston Dynamics? If not go check them out. Navo is a thought in that direction, done all by myself.
+Welcome to the Navo documentation website. Here you will find tons of detailed information around the Navo project and the actual build steps to build the different components of the Navo robot.
+
+For some background basics around several topics related to the machanics, <a href="">head over here</a>. For the build steps <a href="">head over here</a>
