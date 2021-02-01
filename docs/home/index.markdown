@@ -5,9 +5,9 @@ nav_order: 1
 has_children: false
 ---
 
-## The Navo Documentation
+## Navo Documentation Home
 
-Welcome to the Navo documentation website. Here you will find tons of detailed information around the Navo project and the actual build steps to build the different components of the Navo robot. If you want to knw what the goals are with Navo, <a href="">have a look here!</a>
+Welcome to the Navo documentation website. Here you will find tons of detailed information around the Navo project, turotials around the actual build steps of the Navo robot. If you want to know what the goals are with Navo, <a href="https://navo-org.github.io/navo-docs/">have a look here!</a>
 
 For some background basics around several topics related to the machanics, <a href="">head over here</a>. For the build steps <a href="">head over here</a>
 

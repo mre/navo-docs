@@ -10,6 +10,8 @@ Go check out https://navo-org.github.io/navo-docs/
 
 ## Credits
 
-- ROS - The Robotics Operating System
+- <a href="https://www.ros.org/" target="_blank">ROS - The Robotics Operating System</a>
+
+- <a href="" target="_blank">The Arduino Project</a>
 
 This is a WIP and I will update it as and when I get time to work on this project!
