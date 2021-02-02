@@ -4,7 +4,7 @@ Navo is my attempt to build an autonomous indoor navigational robot that can get
 
 Here you will find more information on how to build the NAVO robot from scratch. This is a living documentation and I will update it as soon as I have some time!
 
-This project just contains the documentation website content for the Navo project. Topics I find interesting and important is going to be discussed in detail here. The documentation home page is to be found <a href="https://navo-org.github.io/navo-docs/">here!</a>
+This project just contains the documentation website content for the Navo project. Topics I find interesting and important is going to be discussed in detail here. The documentation home page is to be found <a href="https://navo-org.github.io/navo-docs/docs/home/">here!</a>
 
 ## Credits
 
