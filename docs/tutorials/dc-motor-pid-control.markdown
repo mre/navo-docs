@@ -33,11 +33,11 @@ This is the most simplest of the control where the controller gives an output th
 
 It can be seen from the equation above that with a small Kp the controller will make small attempts to minimize the error, while for a larger Kp, the controller will make a larger attempt to minimize the error. This is good, but this approach suffers from either an overshoot (if Kp is too large) or an undershoot (if Kp is too small). Both these effects, called the offset or the steady state error - we do want to avoid. There is always a steady state residual error in the case of a proportional controller. If this is too theoretical, let us understand it from a more practical perspective.
 
-Imagive we have a water tank as shown in the image below with which our goal is to maintain a constant water level as defined by a Set Point (SP) value. As long as the system is untouched, nothing changes but change is inevitable which means that the outflow will need to be increased or the inflow need to be decreased and vice versa. But the goal remains constant which is to maintain the water levek in the tank at the given Set Point value.
+Imagive we have a water tank as shown in the image below with which our goal is to maintain a constant water level as defined by a Setpoint (SP) value. As long as the system is untouched, nothing changes but change is inevitable which means that the outflow will need to be increased or the inflow need to be decreased or vice versa. But the goal remains constant which is to maintain the water levek in the tank at the given Setpoint value.
 
 ![pid-controller-i](../assets/images/pid/pid-water-tank.png)
 
-If we now increase the flow out of the tank, the tank level will start to decrease because of the imbalance between the inflow and outflow. While the tank level decreases, the error increases and the proportional controller will increase the controller output proportionally to this error. Consequently, the valve controlling the flow into the tank opens wider and more water flows into the tank.
+So with the goal of maintaining the Setpoint at level 4.5, if we now increase the flow out of the tank, the tank level will start to decrease because of the imbalance between the inflow and outflow. While the tank level decreases, the error increases and the proportional controller will increase the controller output proportionally to this error. Consequently, the valve controlling the flow into the tank opens wider and more water flows into the tank.
 
 As the water level continues to decrease, the error increases and valve continues to open until it gets to a point where the inflow again matches the outflow. At this point the tank level (and error) will remain constant. Because the error remains constant our proportinal controller will keep its output constant and the control valve will hold its position. The system now remains in balance, but the tank level remains below its set point. This remaining sustained error is called offset or the steady state error.
 
@@ -73,7 +73,7 @@ and by substituting the values, we get
 
 So what that equation basically mean in our context which is to control the speed of the DC motor is that, the controller output is used to determine how much more or less the motor speed has to be adjusted so that the current speed  (processValue) matches the target speed (setPoint). How does all this look like in reality? This is what we show in the code below:
 
-```
+```c=
 unsigned long lastTime;
 float processValue, output, setPoint;
 float errorSum, previousError;
@@ -106,7 +106,7 @@ void gainTuning(float Kp, float Ki, float Kd)
 }
 ```
 
-TODO.... describe the sketch a bit....
+As it can be seen from the sketch above that 
 
 Now one question might arise on what values to choose for the PID co-efficients. Luckily people have thought about this and the one that comes to mind is the <a href="https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method" target="_blank">Ziegler–Nichols method</a> introduced by John G. Ziegler and Nathaniel B. Nichols in the 1940s. It is a <a href="https://en.wikipedia.org/wiki/Heuristic" target="_blank">heuristic technique</a> of tuning a PID controller. The basic idea here is that it starts out by setting the integral and the derivative gains (basically the co-efficients Ki and Kd) to zero. The proportional gain (Kp) is then increased from zero until it reaches the untimate gain Ku. This untimate gain is the gain where the control loop has acheived a stable and consistent oscillation. The Ku and the oscillation period is then used to set the P, I and the D gains effectively. Let us not dive more into this for now. 
 
