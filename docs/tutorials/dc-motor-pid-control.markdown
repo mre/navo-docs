@@ -121,12 +121,22 @@ Using what we already know for the derivative control, let us use our assumption
 
 ![pid-derivative-kick-2](../assets/images/pid/pid-derivative-kick-2.png)
 
-As it can be seen now that our derivative term becomes a measure of the Process value instead of the error term, hence our actual PID co ntroller equation now becomes:
+As it can be seen now that our derivative term becomes a measure of the Process value instead of the error term, hence our actual PID co ntroller equation now becomes
 
 ![pid-controller-math-2](../assets/images/pid/pid-controller-math-2.png)
+
+It is easy to visualize this with some numbers and the resulting plat as shown in the image below.
+
+TODO.... add the image
+
+![pid-derivative-kick-image](../assets/images/pid/pid-derivative-kick-image.png)
+
+It can be seen that as the Setpoint changes, it results in the error value to spike and this inturn causes the rate of change in error for a given time interval to result in a spike which we term the derivative kick. So by assuming that the Setpoint is a constant and derivating over the Process value actually helps to get rid of such a derivative kick.
 
 ### PID Gain Tuning
 
 Now one question might arise on what values to choose for the PID co-efficients. Luckily people have thought about this and the one that comes to mind is the <a href="https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method" target="_blank">Ziegler–Nichols method</a> introduced by John G. Ziegler and Nathaniel B. Nichols in the 1940s. It is a <a href="https://en.wikipedia.org/wiki/Heuristic" target="_blank">heuristic technique</a> of tuning a PID controller. The basic idea here is that it starts out by setting the integral and the derivative gains (basically the co-efficients Ki and Kd) to zero. The proportional gain (Kp) is then increased from zero until it reaches the untimate gain Ku. This untimate gain is the gain where the control loop has acheived a stable and consistent oscillation. The Ku and the oscillation period is then used to set the P, I and the D gains effectively. Let us not dive more into this for now. 
+
+Tuning the parameters or the gain in a runnng system is a topic in itself.
 
 Hope I was able to explain the PID controller mechanism! With this basic understanding, <a href="https://navo-org.github.io//navo-docs/docs/tutorials/dc-motor-rpm-ros.html">head over here</a> to see how we could combine all what we have learnt theoretically so far to a more practical example.
