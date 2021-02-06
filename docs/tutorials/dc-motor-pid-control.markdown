@@ -15,7 +15,7 @@ We will try to debunk a PID controller from a functional perspective and later o
 
 From the image above, we have the Process which emits a Process Value (PV), the PID Contoller to which we give a Setpoint value (SP), the sensors that measure the actual Process Value (PV) which is then fed back into the PID controller, thus forming a closed loop. It can also be seen that the Process is also affected by external disturbances which makes it deviate from the Setpoint (SP). The PID controller's job is to account for these external disturnances and make the Process Value (PV) match the Setpoint (SP). For our case here where we want to do DC Motor speed control, we have something called a closed-loop controller, where we tell the controller how fast we want the motor to run. We call this the set point. The controller then measures the actual speed of the motor and calculates the difference between the actual speed and the set point which is called the error. The controller then adjusts the voltage to the motor to reduce the error which in turn makes the Motor run at the set point we gave it originally.
 
-If the SP and the PV are the same – then there is no other thing in this world that is going to be much happy than our PID controller. It doesn’t have to do anything, it will set its output to zero, but in reality this is never going to be the case. So let us discuss further to understand the basics behind the PID controller.
+If the SP and the PV are the same – then there is no other thing in this world that is going to be much happy than our PID controller. It doesn’t have to do anything, it will set its output (the CV value from the image above) to zero, but in reality this is never going to be the case. So let us discuss further to understand the basics behind the PID controller.
 
 We first need to understand what each of the term in the PID controller represent. The image below throws a bit of clarity on how each of the terms (Proportional, Integral & the Derivative) combine to get a smooth target output.
 
@@ -37,7 +37,7 @@ Imagive we have a water tank as shown in the image below with which our goal is 
 
 ![pid-controller-i](../assets/images/pid/pid-water-tank.png)
 
-So with the goal of maintaining the Setpoint at level 4.5, if we now increase the flow out of the tank, the tank level will start to decrease because of the imbalance between the inflow and outflow. While the tank level decreases, the error increases and the proportional controller will increase the controller output proportionally to this error. Consequently, the valve controlling the flow into the tank opens wider and more water flows into the tank.
+So with the goal of maintaining the Setpoint say at level 3, if we now increase the flow out of the tank, the tank level will start to decrease because of the imbalance between the inflow and outflow. While the tank level decreases, the error increases and the proportional controller will increase the controller output proportionally to this error. Consequently, the valve controlling the flow into the tank opens wider and more water flows into the tank.
 
 As the water level continues to decrease, the error increases and valve continues to open until it gets to a point where the inflow again matches the outflow. At this point the tank level (and error) will remain constant. Because the error remains constant our proportinal controller will keep its output constant and the control valve will hold its position. The system now remains in balance, but the tank level remains below its set point. This remaining sustained error is called offset or the steady state error.
 
@@ -69,7 +69,7 @@ With the controllers and their equations nailed down, we have the following equa
 
 and by substituting the values, we get
 
-![pid-controller-math](../assets/images/pid/pid-controller-math.png)
+![pid-controller-math-1](../assets/images/pid/pid-controller-math-1.png)
 
 So what that equation basically mean in our context which is to control the speed of the DC motor is that, the controller output is used to determine how much more or less the motor speed has to be adjusted so that the current speed  (processValue) matches the target speed (setPoint). How does all this look like in reality? This is what we show in the code below:
 
