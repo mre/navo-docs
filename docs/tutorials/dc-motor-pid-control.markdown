@@ -19,7 +19,7 @@ If the SP and the PV are the same – then there is no other thing in this world
 
 We first need to understand what each of the term in the PID controller represent. The image below throws a bit of clarity on how each of the terms (Proportional, Integral & the Derivative) combine to get a smooth target output.
 
-![pid-controller-2](../assets/images/pid/pid-controller-2.jpg) 
+![pid-controller-2](../assets/images/pid/pid-controller-2.png) 
 
 As we can see from the image above that the error is calculated by simply calculating the difference between the Setpoint (SV) and the Process Value (PV) or in other words, the error is simply the difference between the desired value and the actual value.
 
