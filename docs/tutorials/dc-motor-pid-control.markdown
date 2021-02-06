@@ -78,24 +78,27 @@ unsigned long lastTime;
 float processValue, output, setPoint;
 float errorSum, previousError;
 float kp, ki, kd;
+int interval = 1000; //1 sec
 
 void pidControl()
 {
    // Time interval to calculate the next error
    unsigned long now = millis();
-   float timeChange = (float)(now - lastTime);
+   float timeDiff = (float)(now - lastTime);
+
+   if(timeDiff >= interval) {
+     // Calculate the error
+     float error = setPoint - processValue;
+     errorSum += error;
+     float dError = (error - previousError);
   
-   // Calculate the error
-   float error = setPoint - processValue;
-   errorSum += (error * timeChange);
-   float dError = (error - previousError) / timeChange;
+     // Calculate the PID control output
+     output = kp * error + ki * errorSum + kd * dError;
   
-   // Calculate the PID control output
-   output = kp * error + ki * errorSum + kd * dError;
-  
-   // Memorize the variables for the next computation
-   previousError = error;
-   lastTime = now;
+     // Memorize the variables for the next computation
+     previousError = error;
+     lastTime = now;
+   }
 }
   
 void gainTuning(float Kp, float Ki, float Kd)
@@ -106,7 +109,23 @@ void gainTuning(float Kp, float Ki, float Kd)
 }
 ```
 
-As it can be seen from the sketch above that we calculate the output of the controller using the pidControl() function which is called at regular intervals.
+As it can be seen from the sketch above that we calculate the output of the controller using the pidControl() function which is called at regular intervals. That piece of code above does not deserve any further explanation, but a few points are worth mentioning and reasoning about. 
+
+### Derivative kick
+
+This happens when a change in the value of the error happens suddenly as a result of a change in the Setpoint. This inturn causes the derivative of the error to be instantaneously large enouch so that we see small spikes in our process output. This is not a big deal, but for systems where the change in Setpoint occurs more often, it is better that we address this to avoid putting stress in the system as such. A simple idea to overcome such derivative kick is to assume that the change in the Setpoint is constant, so the rate of change or in mathematical terms, the derivative of a constant (remeber derivative is all about slope and for a constant there is no slope) is 0.
+
+![pid-derivative-kick-1](../assets/images/pid/pid-derivative-kick-1.png)
+
+Using what we already know for the derivative control, let us use our assumption for a constant Setpoint to the derivative equation
+
+![pid-derivative-kick-2](../assets/images/pid/pid-derivative-kick-2.png)
+
+As it can be seen now that our derivative term becomes a measure of the Process value instead of the error term, hence our actual PID co ntroller equation now becomes:
+
+![pid-controller-math-2](../assets/images/pid/pid-controller-math-2.png)
+
+### PID Gain Tuning
 
 Now one question might arise on what values to choose for the PID co-efficients. Luckily people have thought about this and the one that comes to mind is the <a href="https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method" target="_blank">Ziegler–Nichols method</a> introduced by John G. Ziegler and Nathaniel B. Nichols in the 1940s. It is a <a href="https://en.wikipedia.org/wiki/Heuristic" target="_blank">heuristic technique</a> of tuning a PID controller. The basic idea here is that it starts out by setting the integral and the derivative gains (basically the co-efficients Ki and Kd) to zero. The proportional gain (Kp) is then increased from zero until it reaches the untimate gain Ku. This untimate gain is the gain where the control loop has acheived a stable and consistent oscillation. The Ku and the oscillation period is then used to set the P, I and the D gains effectively. Let us not dive more into this for now. 
 
