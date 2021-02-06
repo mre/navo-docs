@@ -73,7 +73,7 @@ and by substituting the values, we get
 
 So what that equation basically mean in our context which is to control the speed of the DC motor is that, the controller output is used to determine how much more or less the motor speed has to be adjusted so that the current speed  (processValue) matches the target speed (setPoint). How does all this look like in reality? This is what we show in the code below:
 
-```c=
+```c
 unsigned long lastTime;
 float processValue, output, setPoint;
 float errorSum, previousError;
@@ -106,7 +106,7 @@ void gainTuning(float Kp, float Ki, float Kd)
 }
 ```
 
-As it can be seen from the sketch above that 
+As it can be seen from the sketch above that we calculate the output of the controller using the pidControl() function which is called at regular intervals.
 
 Now one question might arise on what values to choose for the PID co-efficients. Luckily people have thought about this and the one that comes to mind is the <a href="https://en.wikipedia.org/wiki/Ziegler%E2%80%93Nichols_method" target="_blank">Ziegler–Nichols method</a> introduced by John G. Ziegler and Nathaniel B. Nichols in the 1940s. It is a <a href="https://en.wikipedia.org/wiki/Heuristic" target="_blank">heuristic technique</a> of tuning a PID controller. The basic idea here is that it starts out by setting the integral and the derivative gains (basically the co-efficients Ki and Kd) to zero. The proportional gain (Kp) is then increased from zero until it reaches the untimate gain Ku. This untimate gain is the gain where the control loop has acheived a stable and consistent oscillation. The Ku and the oscillation period is then used to set the P, I and the D gains effectively. Let us not dive more into this for now. 
 
