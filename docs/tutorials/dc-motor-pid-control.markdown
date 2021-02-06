@@ -71,11 +71,11 @@ and by substituting the values, we get
 
 ![pid-controller-math](../assets/images/pid/pid-controller-math.png)
 
-So what that equation basically mean in our context which is to control the speed of the DC motor is that, the controller calculates the speed of the motor (actual_speed), calculates the error between the current speed and the target speed, uses the equation above to determine how much more or less the motor's speed has to be adjusted so that the current speed matches the target speed. How does all this look like in reality? This is what we show in the code below:
+So what that equation basically mean in our context which is to control the speed of the DC motor is that, the controller output is used to determine how much more or less the motor speed has to be adjusted so that the current speed  (processValue) matches the target speed (setPoint). How does all this look like in reality? This is what we show in the code below:
 
 ```
 unsigned long lastTime;
-float actualValue, output, desiredValue;
+float processValue, output, setPoint;
 float errorSum, previousError;
 float kp, ki, kd;
 
@@ -86,7 +86,7 @@ void pidControl()
    float timeChange = (float)(now - lastTime);
   
    // Calculate the error
-   float error = desiredValue - actualValue;
+   float error = setPoint - processValue;
    errorSum += (error * timeChange);
    float dError = (error - previousError) / timeChange;
   
