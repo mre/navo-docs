@@ -86,7 +86,8 @@ void pidControl()
    unsigned long now = millis();
    float timeDiff = (float)(now - lastTime);
 
-   if(timeDiff >= interval) {
+   if(timeDiff >= interval) 
+   {
      // Calculate the error
      float error = setPoint - processValue;
      errorSum += error;
@@ -127,11 +128,9 @@ As it can be seen now that our derivative term becomes a measure of the Process 
 
 It is easy to visualize this with some numbers and the resulting plat as shown in the image below.
 
-TODO.... add the image
-
 ![pid-derivative-kick-image](../assets/images/pid/pid-derivative-kick-image.png)
 
-It can be seen that as the Setpoint changes, it results in the error value to spike and this inturn causes the rate of change in error for a given time interval to result in a spike which we term the derivative kick. So by assuming that the Setpoint is a constant and derivating over the Process value actually helps to get rid of such a derivative kick.
+Looking at the plot between the derivative of the error vs time, It can be seen that as the Setpoint changes, it results in the error value to spike and this inturn causes the rate of change in error for a given time interval to result in a spike which we term the derivative kick. So by assuming that the Setpoint is a constant and derivating over the Process value actually helps to get rid of such a derivative kick.
 
 ### PID Gain Tuning
 
