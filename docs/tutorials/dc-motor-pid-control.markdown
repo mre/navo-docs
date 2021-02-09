@@ -5,7 +5,7 @@ parent: Tutorials
 nav_order: 5
 ---
 
-In this section, let us explore and understand this 17th century idea on how we could effectively do a speed control for the DC Motor, the <a href="https://en.wikipedia.org/wiki/PID_controller" target="_blank">PID Controller</a> mechanism
+In this section, let us explore and understand this 17th century idea on how we could effectively do a speed control for the DC Motor, the <a href="https://en.wikipedia.org/wiki/PID_controllerr_jkhh" target="_blank">PID Controller</a> mechanism
 
 ## PID Control
 
@@ -116,7 +116,7 @@ As it can be seen from the sketch above that we calculate the output of the cont
 
 This happens when a change in the value of the error happens suddenly as a result of a change in the Setpoint. This inturn causes the derivative of the error to be instantaneously large enouch so that we see small spikes in our process output. This is not a big deal, but for systems where the change in Setpoint occurs more often, it is better that we address this to avoid putting stress in the system as such. A simple idea to overcome such derivative kick is to assume that the change in the Setpoint is constant, so the rate of change or in mathematical terms, the derivative of a constant (remeber derivative is all about slope and for a constant there is no slope) is 0.
 
-![pid-derivative-kick-1](../assets/images/pid/pid-derivative-kick-1.pngg)
+![pid-derivative-kick-1](../assets/images/pid/pid-derivative-kick-1.png)
 
 Using what we already know for the derivative control, let us use our assumption for a constant Setpoint to the derivative equation
 
