@@ -21,7 +21,6 @@
 title: navo
 # Build settings
 theme: just-the-docs
-markdown: kramdown
 plugins:
   - jekyll-feed
 
