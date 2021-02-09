@@ -11,15 +11,9 @@ on:
       - '**.markdown'
 jobs:
   markdown-link-check:
-    name: Broken Links
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run link check
-        uses: gaurav-nelson/github-action-markdown-link-check@v1
-        with:
-          use-quiet-mode: 'no'
-          use-verbose-mode: 'yes'
-          check-modified-files-only: 'yes'
-          config-file: '.mlc_config.json'
+    - uses: actions/checkout@master
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+    name: Broken Links Check
+
