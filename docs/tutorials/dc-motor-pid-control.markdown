@@ -5,7 +5,7 @@ parent: Tutorials
 nav_order: 5
 ---
 
-In this section, let us explore and understand this 17th century idea on how we could effectively do a speed control for the DC Motor, the <a href="https://en.wikipedia.org/wiki/PID_controllerr_jkhh" target="_blank">PID Controller</a> mechanism
+In this section, let us explore and understand this 17th century idea on how we could effectively do a speed control for the DC Motor, the <a href="https://en.wikipedia.org/wiki/PID_controllerr_jkhh_tst" target="_blank">PID Controller</a> mechanism
 
 ## PID Control
 
