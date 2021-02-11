@@ -4,7 +4,7 @@ title: DC Motor with Encoder
 parent: Tutorials
 nav_order: 4
 ---
-
+test
 A DC Motor eqipped with a built in encoder is going to immensly help us in precisely controlling the spped at which the motor rotates. Let us go through the basics behind such an encoder and how it relates to the speed ot the motor.
 
 ## DC Motor
